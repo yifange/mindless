@@ -19,7 +19,7 @@ module.exports = function (grunt) {
   // configurable paths
   var yeomanConfig = {
     app: 'app',
-    dist: '../mindless/public'
+    dist: '../api/public'
   };
 
   try {
