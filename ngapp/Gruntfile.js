@@ -19,7 +19,7 @@ module.exports = function (grunt) {
   // configurable paths
   var yeomanConfig = {
     app: 'app',
-    dist: 'dist'
+    dist: '../mindless/public'
   };
 
   try {
@@ -31,7 +31,7 @@ module.exports = function (grunt) {
     watch: {
       haml: {
         files: ['<%= yeoman.app %>/{,*/}*.haml'],
-        tasks: ['haml:dist']
+        tasks: ['haml:test']
       },
       coffee: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
@@ -161,13 +161,24 @@ module.exports = function (grunt) {
       options: {
         language: 'ruby'
       },
-      dist: {
+      test: {
         files: [
           {
             expand: true,
             cwd: '<%= yeoman.app %>/views',
             src: '{,*/}*.haml',
             dest: '.tmp/views',
+            ext: '.html'
+          }
+        ]
+      },
+      dist: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>/views',
+            src: '{,*/}*.haml',
+            dest: '<%= yeoman.dist %>/views',
             ext: '.html'
           }
         ]
@@ -270,7 +281,8 @@ module.exports = function (grunt) {
             '.htaccess',
             'bower_components/**/*',
             'images/{,*/}*.{gif,webp}',
-            'styles/fonts/*'
+            'styles/fonts/*',
+            'views/*.{html}'
           ]
         }, {
           expand: true,
@@ -346,7 +358,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
-      'haml:dist',
+      'haml:test',
       'autoprefixer',
       'connect:livereload',
       'open',
@@ -369,6 +381,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'autoprefixer',
     'concat',
+    'haml:dist',
     'copy:dist',
     'cdnify',
     'ngmin',
