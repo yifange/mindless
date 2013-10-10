@@ -1,12 +1,5 @@
-.hero-unit
-  %h1
-    Allo, Allo!
-  %p
-    You now have
-  %ul
-    %li{"ng-repeat" => "thing in awesomeThings"}
-      {{thing}}
-  %p
-    installed.
-  
-
+.card{"ng-repeat" => "note in notes"}
+  %h3.card-heading.simple
+    {{note.title}}
+  .card-body
+    {{note.content}}
