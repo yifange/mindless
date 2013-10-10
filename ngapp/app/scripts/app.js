@@ -12,5 +12,5 @@ app.config(function ($routeProvider) {
       });
   });
 app.value("Configs", {
-  apiRoot: "http://localhost:3000/api/v1/"
+  apiRoot: "/api/v1/"
 })
