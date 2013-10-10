@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('ngappApp', ['ui.bootstrap'])
-  .config(function ($routeProvider) {
+var app = angular.module('ngappApp', ['ui.bootstrap', 'ngResource'])
+app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -11,3 +11,6 @@ angular.module('ngappApp', ['ui.bootstrap'])
         redirectTo: '/'
       });
   });
+app.value("Configs", {
+  apiRoot: "http://localhost:3000/api/v1/"
+})
