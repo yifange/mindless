@@ -1,5 +1,18 @@
-.card{"ng-repeat" => "note in notes"}
+.card
   %h3.card-heading.simple
+    %input{:type => "text", :placeholder => "Title", :style => "width: 95%", "ng-model" => "title"}
+  .card-body
+    %textarea{:rows => "3", :placeholder => "Content", :style => "width: 95%; resize: vertical", "ng-model" => "content", :required => true}
+  .card-comments
+    %a.btn.btn-primary{"ng-click" => "create()", :href => ""}
+      Save
+
+.card.animate-repeat{"ng-repeat" => "note in notes"}
+  %a.no-decoration.pull-right{"ng-click" => "delete($index)", :href => "", :style => "margin-right: 10px; margin-top: -10px; font-size: 1.5em"}
+    &times;
+  %h3.card-heading.simple{"ng-if" => "note.title"}
     {{note.title}}
   .card-body
     {{note.content}}
+  .card-comments
+
