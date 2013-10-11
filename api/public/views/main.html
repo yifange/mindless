@@ -1,16 +1,25 @@
-<div class='hero-unit'>
-<h1>
-Allo, Allo!
-</h1>
-<p>
-You now have
-</p>
-<ul>
-<li ng-repeat='thing in awesomeThings'>
-{{thing}}
-</li>
-</ul>
-<p>
-installed.
-</p>
+<div class='card'>
+<h3 class='card-heading simple'>
+<input class='span7' ng-model='title' placeholder='Title' type='text'>
+</h3>
+<div class='card-body'>
+<textarea class='span7' ng-model='content' placeholder='Content' required rows='3' style='resize: vertical'></textarea>
+</div>
+<div class='card-actions'>
+<a class='btn btn-primary' href='' ng-click='create()'>
+Save
+</a>
+</div>
+</div>
+<div class='card animate-repeat' ng-repeat='note in notes'>
+<a class='no-decoration pull-right' href='' ng-click='delete($index)' style='margin-right: 10px; margin-top: -10px; font-size: 1.5em'>
+&times;
+</a>
+<h3 class='card-heading simple' ng-if='note.title'>
+{{note.title}}
+</h3>
+<div class='card-body'>
+{{note.content}}
+</div>
+<div class='card-comments'></div>
 </div>

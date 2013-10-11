@@ -1,10 +1,9 @@
 /**
- * @license AngularJS v1.0.8
+ * @license AngularJS v1.2.0rc1
  * (c) 2010-2012 Google, Inc. http://angularjs.org
  * License: MIT
  */
-(function(window, angular, undefined) {
-'use strict';
+(function(window, angular, undefined) {'use strict';
 
 /**
  * @ngdoc overview
@@ -23,17 +22,6 @@ angular.module('ngCookies', ['ng']).
    *
    * Only a simple Object is exposed and by adding or removing properties to/from
    * this object, new cookies are created/deleted at the end of current $eval.
-   *
-   * # Installation
-   * To use $cookies make sure you have included the `angular-cookies.js` that comes in Angular
-   * package. You can also find this file on Google CDN, bower as well as at
-   * {@link http://code.angularjs.org/ code.angularjs.org}.
-   *
-   * Finally load the module in your application:
-   *
-   *        angular.module('app', ['ngCookies']);
-   *
-   * and you are ready to get started!
    *
    * @example
    <doc:example>
