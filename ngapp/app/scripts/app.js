@@ -11,6 +11,7 @@ app.config(function ($routeProvider) {
         redirectTo: '/'
       });
   });
-app.value("Configs", {
+app.constant("Configs", {
   apiRoot: "/api/v1/"
-})
+});
+
