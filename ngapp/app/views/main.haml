@@ -1,9 +1,9 @@
 .card
   %h3.card-heading.simple
-    %input{:type => "text", :placeholder => "Title", :style => "width: 95%", "ng-model" => "title"}
+    %input.span7{:type => "text", :placeholder => "Title", "ng-model" => "title"}
   .card-body
-    %textarea{:rows => "3", :placeholder => "Content", :style => "width: 95%; resize: vertical", "ng-model" => "content", :required => true}
-  .card-comments
+    %textarea.span7{:rows => "3", :placeholder => "Content", :style => "resize: vertical", "ng-model" => "content", :required => true}
+  .card-actions
     %a.btn.btn-primary{"ng-click" => "create()", :href => ""}
       Save
 
