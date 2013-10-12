@@ -7,7 +7,7 @@ app.controller 'MainCtrl', ["Note", "$scope", (Note, $scope) ->
   $scope.create = ->
     if $scope.content
       Note.save {title: $scope.title, content: $scope.content}, (note) ->
-        $scope.notes.push(note)
+        $scope.notes.unshift(note)
         $scope.title = ""
         $scope.content = ""
   $scope.delete = (index) ->
