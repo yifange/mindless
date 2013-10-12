@@ -2,7 +2,7 @@
   %h3.card-heading.simple
     %input.span7{:type => "text", :placeholder => "Title", "ng-model" => "title"}
   .card-body
-    %textarea.span7{:rows => "3", :placeholder => "Content", :style => "resize: vertical", "ng-model" => "content", :required => true}
+    %textarea.span7.msd-elastic{:rows => "3", :placeholder => "Content", :style => "resize: vertical", "ng-model" => "content", :required => true}
   .card-actions
     %a.btn.btn-primary{"ng-click" => "create()", :href => ""}
       Save
@@ -12,7 +12,6 @@
     &times;
   %h3.card-heading.simple{"ng-if" => "note.title"}
     {{note.title}}
-  .card-body
-    {{note.content}}
+  .card-body{"btf-markdown" => "note.content"}
   .card-actions
 
