@@ -3,7 +3,7 @@
 <input class='span7' ng-model='title' placeholder='Title' type='text'>
 </h3>
 <div class='card-body'>
-<textarea class='span7' ng-model='content' placeholder='Content' required rows='3' style='resize: vertical'></textarea>
+<textarea class='span7 msd-elastic' ng-model='content' placeholder='Content' required rows='3' style='resize: vertical'></textarea>
 </div>
 <div class='card-actions'>
 <a class='btn btn-primary' href='' ng-click='create()'>
@@ -18,8 +18,6 @@ Save
 <h3 class='card-heading simple' ng-if='note.title'>
 {{note.title}}
 </h3>
-<div class='card-body'>
-{{note.content}}
-</div>
+<div btf-markdown='note.content' class='card-body'></div>
 <div class='card-actions'></div>
 </div>
