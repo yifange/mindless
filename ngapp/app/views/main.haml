@@ -1,3 +1,13 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a.brand{:href => ""}
+        Mindless
+      %ul.nav.pull-right
+        %li
+          %form.navbar-search
+            %input.search-query{:type => "text", :placeholder => "Search"}
+    
 .card
   %h3.card-heading.simple
     %input.span7{:type => "text", :placeholder => "Title", "ng-model" => "title"}
