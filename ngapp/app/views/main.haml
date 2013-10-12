@@ -10,9 +10,9 @@
     
 .card{:style => "margin-top: 60px"}
   %h3.card-heading.simple
-    %input.span7{:type => "text", :placeholder => "Title", "ng-model" => "title"}
+    %input.span7{:type => "text", :placeholder => "Title", "ng-model" => "title", :style => "padding: 10px; font-size: 20px; font-weight: 300; color: #777;"}
   .card-body
-    %textarea.span7.msd-elastic{:rows => "3", :placeholder => "Content", :style => "resize: vertical", "ng-model" => "content", :required => true}
+    %textarea.span7.msd-elastic{:rows => "3", :placeholder => "Content", "ng-model" => "content", :required => true, :style => "padding: 10px; resize: vertical;"}
   .card-actions
     %a.btn.btn-primary{"ng-click" => "create()", :href => ""}
       Save
