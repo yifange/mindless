@@ -2,6 +2,7 @@ cd ngapp
 grunt clean --force
 grunt build
 cd ..
+git add .
 git add -u .
 git commit
 git push origin master
