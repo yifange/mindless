@@ -11,7 +11,22 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="styles/7b89c015.main.css">
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/bootplus.css">
+        <link rel="stylesheet" href="styles/bootplus-responsive.css"> 
+        <link rel="stylesheet" href="styles/font-awesome.css">
+        <style type="text/css">
+           @font-face {
+              font-family: 'FontAwesome';
+              src: url('/styles/fonts/fontawesome-webfont.eot');
+              src: url('/styles/fonts/fontawesome-webfont.eot') format('embedded-opentype'),
+              url('/styles/fonts/fontawesome-webfont.woff') format('woff'),
+              url('/styles/fonts/fontawesome-webfont.ttf') format('truetype');
+              font-weight: normal;
+              font-style: normal;
+           }
+        </style>
 </head>
   <body ng-app="ngappApp">
     <!--[if lt IE 7]>
@@ -43,10 +58,27 @@
 
     <script src="bower_components/angular/angular.js"></script>
 
-        <script src="scripts/3a2c4e99.scripts.js"></script>
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <!-- endbuild -->
 
-        <script src="scripts/9ee51c21.modules.js"></script>
+        <!-- build:js scripts/modules.js -->
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <!-- endbuild -->
 
-        <script src="scripts/64186ef0.plugins.js"></script>
+        <!-- build:js scripts/plugins.js -->
+        <script src="bower_components/lodash/lodash.js"></script>
+        <script src="bower_components/restangular/dist/restangular.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+        <script src="bower_components/showdown/compressed/showdown.js"></script>
+        <script src="bower_components/angular-markdown-directive/markdown.js"></script>
+        <script src="bower_components/angular-elastic/elastic.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/angular-moment/angular-moment.js"></script>
+        <!-- endbuild -->
 </body>
 </html>

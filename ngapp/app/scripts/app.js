@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('ngappApp', ['ui.bootstrap', 'ngResource', 'ngRoute', 'ngAnimate', 'btford.markdown', 'monospaced.elastic', 'angularMoment'])
+var app = angular.module('ngappApp', ['ui.bootstrap', 'restangular', 'ngRoute', 'ngAnimate', 'btford.markdown', 'monospaced.elastic', 'angularMoment'])
 app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -11,6 +11,9 @@ app.config(function ($routeProvider) {
         redirectTo: '/'
       });
   });
+app.config(function(RestangularProvider) {
+  RestangularProvider.setBaseUrl("/api/v1");
+});
 app.constant("Configs", {
   apiRoot: "/api/v1/"
 });

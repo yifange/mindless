@@ -1,11 +1,11 @@
 <div class='navbar navbar-fixed-top'>
 <div class='navbar-inner'>
 <div class='container'>
-<div class='btn btn-navbar' ng-click='isCollapsed = !isCollapsed' ng-init='isCollapsed = true'>
-<span class='icon-bar' style='margin-top: 6px;'></span>
+<button class='btn btn-navbar' ng-click='isCollapsed = !isCollapsed' ng-init='isCollapsed = true'>
 <span class='icon-bar'></span>
 <span class='icon-bar'></span>
-</div>
+<span class='icon-bar'></span>
+</button>
 <a class='brand' href=''>
 Mindless
 </a>
@@ -34,15 +34,35 @@ Save
 </a>
 </div>
 </div>
-<div class='card animate-repeat' ng-repeat='note in notes'>
+<div class='card animate-repeat' ng-mouseenter='mouseEnterNote($index)' ng-mouseleave='mouseLeaveNote()' ng-repeat='note in notes'>
 <a class='no-decoration pull-right' href='' ng-click='delete($index)' style='margin-right: 10px; margin-top: -10px; font-size: 1.5em'>
 &times;
 </a>
+<div ng-switch='editing == $index'>
+<div ng-switch-when='false'>
 <h3 class='card-heading simple' ng-if='note.title'>
 {{note.title}}
 </h3>
 <div btf-markdown='note.content' class='card-body'></div>
 <div class='card-actions'>
+<a class='no-decoration ng-hide' href='' ng-click='editNote($index)' ng-show='mouseIsOnNote($index)'>
+<i class='icon-edit icon-large'></i>
+</a>
 <span am-time-ago='note.updated_at' class='muted pull-right'></span>
+</div>
+</div>
+<div ng-switch-when='true'>
+<h3 class='card-heading simple'>
+<input class='span7' ng-model='note.title' placeholder='Title' style='padding: 10px; font-size: 20px; font-weight: 300; color: #777;' type='text'>
+</h3>
+<div class='card-body'>
+<textarea class='span7 msd-elastic' ng-model='note.content' placeholder='Content' required rows='3' style='resize: vertical;'></textarea>
+</div>
+<div class='card-actions'>
+<a class='no-decoration' href='' ng-click='update($index)'>
+<i class='icon-ok-circle icon-large'></i>
+</a>
+</div>
+</div>
 </div>
 </div>
