@@ -22,13 +22,31 @@
   .card-actions
     %a.btn.btn-primary{"ng-click" => "create()", :href => ""}
       Save
+-# .card
+-#   .card-body
+-#     %p
+-#       hello {{mouseOn}}
 .card.animate-repeat{"ng-repeat" => "note in notes", "ng-mouseenter" => "mouseOn = $index", "ng-mouseleave" => "mouseOn = -1"}
   %a.no-decoration.pull-right{"ng-click" => "delete($index)", :href => "", :style => "margin-right: 10px; margin-top: -10px; font-size: 1.5em"}
     &times;
-  %h3.card-heading.simple{"ng-if" => "note.title"}
-    {{note.title}}
-  .card-body{"btf-markdown" => "note.content"}
-  .card-actions
-    %a.no-decoration.ng-hide{:href => "", "ng-show" => "mouseOn == $index"}
-      %i.icon-edit.icon-large
-    %span.muted.pull-right{"am-time-ago" => "note.updated_at"}
+  %div{"ng-switch" => "editing == $index"}
+    %div{"ng-switch-when" => "false"}
+      %h3.card-heading.simple{"ng-if" => "note.title"}
+        {{note.title}}
+      .card-body{"btf-markdown" => "note.content"}
+      .card-actions
+        %a.no-decoration.ng-hide{:href => "", "ng-show" => "mouseOn == $index", "ng-click" => "editNote($index)"}
+          %i.icon-edit.icon-large
+        %span.muted.pull-right{"am-time-ago" => "note.updated_at"}
+
+    %div{"ng-switch-when" => "true"}
+      %h3.card-heading.simple
+        %input.span7{:type => "text", :placeholder => "Title", "ng-model" => "note.title", :style => "padding: 10px; font-size: 20px; font-weight: 300; color: #777;"}
+      .card-body
+        %textarea.span7.msd-elastic{:rows => "3", :placeholder => "Content", "ng-model" => "note.content", :required => true, :style => "resize: vertical;"}
+      .card-actions
+        %a.no-decoration{:href => "", "ng-click" => "update($index)"}
+          %i.icon-ok-circle.icon-large
+
+
+
