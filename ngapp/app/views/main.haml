@@ -1,12 +1,18 @@
 .navbar.navbar-fixed-top
   .navbar-inner
     .container
+      .btn.btn-navbar{"ng-click" => "isCollapsed = !isCollapsed", "ng-init" => "isCollapsed = true"}
+        %span.icon-bar{:style => "margin-top: 6px;"}
+        %span.icon-bar
+        %span.icon-bar
       %a.brand{:href => ""}
         Mindless
-      %ul.nav.pull-right
-        %li
-          %form.navbar-search
-            %input.search-query{:type => "text", :placeholder => "Search"}
+
+      .nav-collapse.collapse{:collapse => "isCollapsed"}
+        %ul.nav.pull-right
+          %li
+            %form.navbar-search
+              %input.search-query{:type => "text", :placeholder => "Search"}
     
 .card{:style => "margin-top: 60px"}
   %h3.card-heading.simple

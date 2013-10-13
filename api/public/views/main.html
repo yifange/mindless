@@ -1,9 +1,15 @@
 <div class='navbar navbar-fixed-top'>
 <div class='navbar-inner'>
 <div class='container'>
+<div class='btn btn-navbar' ng-click='isCollapsed = !isCollapsed' ng-init='isCollapsed = true'>
+<span class='icon-bar' style='margin-top: 6px;'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</div>
 <a class='brand' href=''>
 Mindless
 </a>
+<div class='nav-collapse collapse' collapse='isCollapsed'>
 <ul class='nav pull-right'>
 <li>
 <form class='navbar-search'>
@@ -11,6 +17,7 @@ Mindless
 </form>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>
