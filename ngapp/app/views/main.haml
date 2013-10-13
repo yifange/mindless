@@ -1,8 +1,8 @@
 .navbar.navbar-fixed-top
   .navbar-inner
     .container
-      .btn.btn-navbar{"ng-click" => "isCollapsed = !isCollapsed", "ng-init" => "isCollapsed = true"}
-        %span.icon-bar{:style => "margin-top: 6px;"}
+      %button.btn.btn-navbar{"ng-click" => "isCollapsed = !isCollapsed", "ng-init" => "isCollapsed = true"}
+        %span.icon-bar
         %span.icon-bar
         %span.icon-bar
       %a.brand{:href => ""}

@@ -4,4 +4,4 @@ Mindless is a note taking demo webapp using Rails to provide the backend APIs an
 
 A running online demo can be accessed [here](http://mindless.herokuapp.com).
 
-## Architecture
+### Architecture
