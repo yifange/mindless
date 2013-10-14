@@ -36,7 +36,7 @@
       .card-body{"btf-markdown" => "note.content"}
       .card-actions
         %a.no-decoration.ng-hide{:href => "", "ng-show" => "mouseIsOnNote($index)", "ng-click" => "editNote($index)"}
-          %i.icon-edit.icon-large
+          %i.icon-edit.icon-large{:title => "Edit"}
         %span.muted.pull-right{"am-time-ago" => "note.updated_at"}
 
     %div{"ng-switch-when" => "true"}
@@ -46,7 +46,7 @@
         %textarea.span7.msd-elastic{:rows => "3", :placeholder => "Content", "ng-model" => "note.content", :required => true, :style => "resize: vertical;"}
       .card-actions
         %a.no-decoration{:href => "", "ng-click" => "update($index)"}
-          %i.icon-ok-circle.icon-large
+          %i.icon-ok-circle.icon-large{:title => "Done"}
 
 
 
