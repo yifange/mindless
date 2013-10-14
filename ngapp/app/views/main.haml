@@ -41,7 +41,7 @@
 
     %div{"ng-switch-when" => "true"}
       %h3.card-heading.simple
-        %input.span7{:type => "text", :placeholder => "Title", "ng-model" => "note.title", :style => "padding: 10px; font-size: 20px; font-weight: 300; color: #777;"}
+        %input.span7{:type => "text", :placeholder => "Title", "ng-model" => "note.title", :style => "padding: 10px; font-size: 20px !important; font-weight: 300 !important; color: #777;"}
       .card-body
         %textarea.span7.msd-elastic{:rows => "3", :placeholder => "Content", "ng-model" => "note.content", :required => true, :style => "resize: vertical;"}
       .card-actions
