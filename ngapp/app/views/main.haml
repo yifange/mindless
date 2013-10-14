@@ -26,7 +26,7 @@
 -#   .card-body
 -#     %p
 -#       hello {{mouseOn}}
-.card.animate-repeat{"ng-repeat" => "note in notes", "ng-mouseleave" => "mouseLeaveNote()", "ng-click" => "mouseEnterNote($index)"}
+.card.animate-repeat{"ng-repeat" => "note in notes", "ng-mouseenter" => "mouseEnterNote($index)", "ng-mouseleave" => "mouseLeaveNote()", "ng-click" => "mouseEnterNote($index)"}
   %a.no-decoration.pull-right{"ng-click" => "delete($index)", :href => "", :style => "margin-right: 10px; margin-top: -10px; font-size: 1.5em"}
     &times;
   %div{"ng-switch" => "editing == $index"}
