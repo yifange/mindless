@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('ngappApp', ['ui.bootstrap', 'restangular', 'ngRoute', 'ngAnimate', 'btford.markdown', 'monospaced.elastic', 'angularMoment'])
+var app = angular.module('ngappApp', ['ui.bootstrap', 'restangular', 'ngRoute', 'ngAnimate', 'btford.markdown', 'monospaced.elastic', 'angularMoment', 'ngTouch'])
 app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
