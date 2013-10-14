@@ -27,12 +27,14 @@ app.controller 'MainCtrl', ["Restangular", "$scope", (Restangular, $scope) ->
     $scope.notes[index].remove().then ->
       $scope.notes.splice(index, 1)
 
-  $scope.update = ->
-    $scope.note.put().then ->
+  $scope.update = (index) ->
+    $scope.noteEditing.put().then ->
       $scope.editing = undefined
+      $scope.noteEditing.updated_at = moment().format()
+      $scope.noteEditing = undefined
 
   $scope.editNote = (index) ->
     $scope.editing = index
-    $scope.note = $scope.notes[index]
+    $scope.noteEditing = $scope.notes[index]
 ]
 
