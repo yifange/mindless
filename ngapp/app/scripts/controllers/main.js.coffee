@@ -27,7 +27,7 @@ app.controller 'MainCtrl', ["Restangular", "$scope", (Restangular, $scope) ->
     $scope.notes[index].remove().then ->
       $scope.notes.splice(index, 1)
 
-  $scope.update = (index) ->
+  $scope.update = ->
     $scope.note.put().then ->
       $scope.editing = undefined
 
