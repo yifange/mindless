@@ -12,9 +12,6 @@ app.config(function ($routeProvider) {
       });
   });
 app.config(function(RestangularProvider) {
-  RestangularProvider.setBaseUrl("/api/v1");
-});
-app.constant("Configs", {
-  apiRoot: "/api/v1/"
+  RestangularProvider.setBaseUrl("");
 });
 

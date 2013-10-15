@@ -28,19 +28,19 @@
     &times;
   %div{"ng-switch" => "editing == $index"}
     %div{"ng-switch-when" => "false"}
-      %h3.card-heading.simple{"ng-if" => "note.title"}
-        {{note.title}}
-      .card-body{"btf-markdown" => "note.content"}
+      %h3.card-heading.simple{"ng-if" => "note.value.title"}
+        {{note.value.title}}
+      .card-body{"btf-markdown" => "note.value.content"}
       .card-actions
         %a.no-decoration.ng-hide{:href => "", "ng-show" => "mouseIsOnNote($index)", "ng-click" => "editNote($index)"}
           %i.icon-edit.icon-large{:title => "Edit"}
-        %span.muted.pull-right{"am-time-ago" => "note.updated_at"}
+        %span.muted.pull-right{"am-time-ago" => "note.value.updated_at"}
 
     %div{"ng-switch-when" => "true"}
       %h3.card-heading.simple
-        %input.span7{:type => "text", :placeholder => "Title", "ng-model" => "noteEditing.title", :style => "padding: 10px; font-size: 20px; font-weight: 300; color: #777;"}
+        %input.span7{:type => "text", :placeholder => "Title", "ng-model" => "noteEditing.value.title", :style => "padding: 10px; font-size: 20px; font-weight: 300; color: #777;"}
       .card-body
-        %textarea.span7.msd-elastic{:rows => "3", :placeholder => "Content", "ng-model" => "noteEditing.content", :required => true, :style => "resize: vertical;"}
+        %textarea.span7.msd-elastic{:rows => "3", :placeholder => "Content", "ng-model" => "noteEditing.value.content", :required => true, :style => "resize: vertical;"}
       .card-actions
         %a.no-decoration{:href => "", "ng-click" => "update($index)"}
           %i.icon-ok-circle.icon-large{:title => "Done"}
