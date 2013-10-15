@@ -80,8 +80,11 @@ module.exports = function (grunt) {
       proxies: [
           {
               context: '/notes',
-              host: 'localhost',
-              port: 5984
+              host: 'luzerno.cloudant.com',
+              port: 443,
+              https: true,
+              changeOrigin: true,
+              xforward: true
           }
       ],
       livereload: {
