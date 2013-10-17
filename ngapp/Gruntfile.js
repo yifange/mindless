@@ -80,7 +80,7 @@ module.exports = function (grunt) {
       proxies: [
           {
               context: '/notes',
-              host: 'luzerno.cloudant.com',
+              host: 'yifan.cloudant.com',
               port: 443,
               https: true,
               changeOrigin: true,
